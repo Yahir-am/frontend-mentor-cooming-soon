@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+$Span: hsl(0, 36%, 70%);
+$Error: hsl(0, 93%, 68%);
+$Title: hsl(0, 6%, 24%);
+$Back-gradient: linear-gradient(135deg,hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+$Button: linear-gradient(135deg, hsl(0, 80%, 86%),hsl(0, 74%, 74%));
+$fontSize: 16px;
+
+@function size($value){
+    @return $fontSize * $value;
+}
+
+@mixin letter {
+    padding: 0 2.5em;
+    text-align: center;
+}
+
+@mixin backgrounds($bg-image,$bg-size){
+    background-image: $bg-image;
+    background-repeat: no-repeat;
+    background-size: $bg-size;
+    background-position: center center;
+}
+
+@mixin sizes($padding,$width) {
+    padding: $padding;
+    width: $width;
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    @include backgrounds(url('../images/bg-pattern-desktop.svg'), cover);
+}
+
+main{
+    min-height: 100vh;
+    font-size: $fontSize;
+    font-family: 'Josefin Sans',sans-serif;
+    display: flex;
+}
+.left{  
+    @media screen and (max-width: 899px){
+        @include sizes(0, 100%);
+        .logo{
+            margin: 2.5em;
+        }
+        .mobile{
+            width: 100%;
+        }
+        .paragraph{
+            @include letter();
+        }
+    }
+    @media screen and (min-width: 900px){
+        @include sizes(3em, 50%);
+        .mobile{
+            display: none;
+        }
+        .rigth{
+            height: 100%;
+        }
+    }
+    @media screen and (min-width: 1200px){
+        @include sizes(3.87em 10em, 56%);
+    }
+    .title{
+        @media screen and (max-width: 899px){
+            margin-top: 4em;
+            @include letter();
+            h1{
+                font-size: size(3);
+            }
+        }
+        @media screen and (min-width: 600px){
+            h1{
+                font-size: size(4);
+            }
+        }
+        @media screen and (min-width: 900px){
+            margin-top: 8.1em;
+            h1{
+                font-size: size(4.3);
+            }
+        }
+        h1{
+            color: $Title;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            line-height: 1.1em;
+            span{
+                font-weight: 300;
+                color: $Span;
+            }
+        }
+    }
+}
+.paragraph{
+    margin-top: 2.5em;
+    color: $Span;
+    line-height: 1.7em;
+}
+form{
+    margin-top: 2.8em;
+    height: 6.7em;
+    position: relative;
+    @media screen and (max-width: 899px){
+        width: 85%;
+        margin: 1.5em auto;
+    }
+    input{
+        width: 90%;
+        height: 55%;
+        border-radius: 25px;
+        border: 0.1px solid hsl(0, 6%, 63%);
+        padding-left: 2em;
+        &:focus{
+            outline: none;
+        }
+        &::placeholder{
+            color: hsl(0, 80%, 86%);
+        }
+    }
+    button{
+        width: 23%;
+        height: 56%;
+        border-radius: 30px;
+        border: none;
+        background: $Button;
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        cursor: pointer;
+        &:hover{
+            background: hsl(0, 80%, 86%);
+        }
+    }
+    #error-icon{
+        position: absolute;
+        right: 27%;
+        top: 18%;
+        visibility: hidden;
+    }
+}
+form.error input{
+    border: 2px solid $Error;
+}
+form.error #error-icon{
+    visibility: visible;
+}
+form.success input{
+    border: 2px solid rgb(24, 226, 24);
+}
+form.success #error-icon{
+    visibility: hidden;
+}
+.rigth{
+    @include backgrounds(url('../images/hero-desktop.jpg'), 100% 100%);
+    @media screen and (max-width: 899px){
+        display: none;
+    }
+    @media screen and (max-width: 1199px){
+        width: 50%;
+    }
+    @media screen and (min-width: 1200px){
+        width: 44%;
+    }
+}
+
+small{
+    color: $Error;
+    height: 30%;
+    width: 100%;
+    left: 5%;
+    bottom: 5%;
+    font-weight: 600;
+    position: absolute;
+}
+
+

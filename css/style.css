@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+* {
+  margin: 0%;
+  padding: 0%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-image: url("../images/bg-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+main {
+  min-height: 100vh;
+  font-size: 16px;
+  font-family: 'Josefin Sans',sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 899px) {
+  .left {
+    padding: 0;
+    width: 100%;
+  }
+  .left .logo {
+    margin: 2.5em;
+  }
+  .left .mobile {
+    width: 100%;
+  }
+  .left .paragraph {
+    padding: 0 2.5em;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .left {
+    padding: 3em;
+    width: 50%;
+  }
+  .left .mobile {
+    display: none;
+  }
+  .left .rigth {
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .left {
+    padding: 3.87em 10em;
+    width: 56%;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .left .title {
+    margin-top: 4em;
+    padding: 0 2.5em;
+    text-align: center;
+  }
+  .left .title h1 {
+    font-size: 48px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .left .title h1 {
+    font-size: 64px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .left .title {
+    margin-top: 8.1em;
+  }
+  .left .title h1 {
+    font-size: 68.8px;
+  }
+}
+
+.left .title h1 {
+  color: #413a3a;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  line-height: 1.1em;
+}
+
+.left .title h1 span {
+  font-weight: 300;
+  color: #ce9797;
+}
+
+.paragraph {
+  margin-top: 2.5em;
+  color: #ce9797;
+  line-height: 1.7em;
+}
+
+form {
+  margin-top: 2.8em;
+  height: 6.7em;
+  position: relative;
+}
+
+@media screen and (max-width: 899px) {
+  form {
+    width: 85%;
+    margin: 1.5em auto;
+  }
+}
+
+form input {
+  width: 90%;
+  height: 55%;
+  border-radius: 25px;
+  border: 0.1px solid #a69b9b;
+  padding-left: 2em;
+}
+
+form input:focus {
+  outline: none;
+}
+
+form input::-webkit-input-placeholder {
+  color: #f8bfbf;
+}
+
+form input:-ms-input-placeholder {
+  color: #f8bfbf;
+}
+
+form input::-ms-input-placeholder {
+  color: #f8bfbf;
+}
+
+form input::placeholder {
+  color: #f8bfbf;
+}
+
+form button {
+  width: 23%;
+  height: 56%;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #f8bfbf;
+}
+
+form #error-icon {
+  position: absolute;
+  right: 27%;
+  top: 18%;
+  visibility: hidden;
+}
+
+form.error input {
+  border: 2px solid #f96262;
+}
+
+form.error #error-icon {
+  visibility: visible;
+}
+
+form.success input {
+  border: 2px solid #18e218;
+}
+
+form.success #error-icon {
+  visibility: hidden;
+}
+
+.rigth {
+  background-image: url("../images/hero-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+}
+
+@media screen and (max-width: 899px) {
+  .rigth {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .rigth {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .rigth {
+    width: 44%;
+  }
+}
+
+small {
+  color: #f96262;
+  height: 30%;
+  width: 100%;
+  left: 5%;
+  bottom: 5%;
+  font-weight: 600;
+  position: absolute;
+}
